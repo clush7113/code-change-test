@@ -1,18 +1,10 @@
 testString = ""
 searchChar = ""
-charList = []
-lastPosition = -1
+newChar= ""
 
-
-while testString == "":
+while testString == "" and len(searchChar) != 1 and newChar=="":
     testString = input("Please enter some text to search : ")
+    searchChar = input("Enter a character to search for : ")
+    newChar = input("What would you like to replace the character with? : ")
 
-while len(searchChar) != 1:
-    searchChar = input("Enter a character to search for :")
-
-for x in range (len(testString)):
-    if testString[x] == searchChar:
-        charList.append(x-lastPosition)
-        lastPosition = x
-
-print ("I found {0} occurences of {1}".format(len(charList),searchChar))
+print(testString.replace(searchChar,newChar))
